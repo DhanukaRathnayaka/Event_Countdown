@@ -27,17 +27,16 @@ function startTimer() {
     if (remainingTime > 0) {
       remainingTime--;
       displayTime(remainingTime);
+
+      // Play sound during the last 5 seconds
+      if (remainingTime === 5) {
+        const endSound = document.getElementById("endSound");
+        endSound.play();
+      }
     } else {
       clearInterval(countdown);
-      playEndSound(); // Play the sound when the timer ends
     }
   }, 1000);
-}
-
-// Play Sound on Timer End
-function playEndSound() {
-  const endSound = document.getElementById("endSound");
-  endSound.play();
 }
 
 // Pause Timer
@@ -63,8 +62,8 @@ function resetTimer() {
 
   // Stop and reset the music
   const endSound = document.getElementById("endSound");
-  endSound.pause(); // Pause the audio
-  endSound.currentTime = 0; // Reset playback to the beginning
+  endSound.pause();
+  endSound.currentTime = 0;
 }
 
 // Open Edit Modal
