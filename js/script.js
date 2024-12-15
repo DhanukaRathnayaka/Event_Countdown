@@ -4,19 +4,7 @@ let countdown;
 let totalTime = 180; // Default time: 3 minutes
 let isPaused = false; // Timer pause state
 let remainingTime = totalTime;
-const editModal = document.getElementById("editModal");
-
-// Display Time
-function displayTime(seconds) {
-  const minutes = String(Math.floor(seconds / 60)).padStart(2, '0');
-  const secs = String(seconds % 60).padStart(2, '0');
-  timerDisplay.textContent = `${minutes}:${secs}`;
-
-  if (remainingTime <= 60) {
-    timerDisplay.classList.add('red'); // Add red styling for last minute
-  } else {
-    timerDisplay.classList.remove('red'); // Remove red styling when more than 1 minute
-  }
+const
 }
 
 // Start Timer
